@@ -17,3 +17,15 @@ export const fetchWeather = async (city) => {
     throw error;
   }
 };
+
+export const fetchWeatherByCoords = async (lat, lon) => {
+  const response = await fetch(
+    `${BASE_URL}?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
+  );
+
+  if (!response.ok) {
+    throw new Error("Location error");
+  }
+
+  return await response.json();
+};
