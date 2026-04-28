@@ -18,7 +18,7 @@ const Map = ({
         }}
         defaultCenter={center}
         defaultZoom={zoom}
-        onClick={({ lat, lng, event }) => onLocationSelect(lat, lng, event)}
+        onClick={({ lat, lng, x, y }) => onLocationSelect(lat, lng, x, y)}
       >
         {selectedLocation && (
           <Marker
